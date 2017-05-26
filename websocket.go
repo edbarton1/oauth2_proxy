@@ -19,11 +19,12 @@ var (
 	WSKeyHeaderKey      = http.CanonicalHeaderKey("sec-websocket-key")
 	WSProtocolHeaderKey = http.CanonicalHeaderKey("sec-websocket-protocol")
 	WSVersionHeaderKey  = http.CanonicalHeaderKey("sec-websocket-version")
+        WSExtensionsHeaderKey = http.CanonicalHeaderKey("sec-websocket-extensions")
 
 	ConnectionHeaderValue = "Upgrade"
 	UpgradeHeaderValue    = "websocket"
 
-	HandshakeHeaders = []string{ConnectionHeaderKey, UpgradeHeaderKey, WSVersionHeaderKey, WSKeyHeaderKey}
+	HandshakeHeaders = []string{ConnectionHeaderKey, UpgradeHeaderKey, WSVersionHeaderKey, WSKeyHeaderKey, WSExtensionsHeaderKey}
 	UpgradeHeaders   = []string{SetCookieHeaderKey, WSProtocolHeaderKey}
 )
 
