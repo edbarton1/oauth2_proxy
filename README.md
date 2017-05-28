@@ -33,6 +33,7 @@ Valid providers are :
 * [GitLab](#gitlab-auth-provider)
 * [LinkedIn](#linkedin-auth-provider)
 * [MyUSA](#myusa-auth-provider)
+* [Auth0](#auth0-auth-provider)
 
 The provider can be selected using the `provider` configuration value.
 
@@ -138,6 +139,16 @@ The [MyUSA](https://alpha.my.usa.gov) authentication service ([GitHub](https://g
 For adding an application to the Microsoft Azure AD follow [these steps to add an application](https://azure.microsoft.com/en-us/documentation/articles/active-directory-integrating-applications/).
 
 Take note of your `TenantId` if applicable for your situation. The `TenantId` can be used to override the default `common` authorization server with a tenant specific server.
+
+### Auth0 Auth Provider
+
+1. Add an client to your Auth0 account.
+2. Configure the client to have Allowed Callback URL, probably `https://internal.yourcompany.com/oauth2/callback`
+3. Provide your Auth0 domain with the `--auth0-tenant=<YOUR DOMAIN>` commandline option.  Do not include the `.auth0.com` part.
+
+The Auth0 auth provider calls the /userinfo path of your Auth0 domain to get the email address of the user.
+
+The Auth0 auth provider is experimental and may be incomplete.  It is available only on a branch of this repository.  Build the websockets-merge branch or the auth0 branch to get this provider.
 
 ## Email Authentication
 
